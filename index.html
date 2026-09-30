@@ -133,7 +133,6 @@
       margin-bottom: 60px;
     }
 
-    /* Reset/Overriding Stili Brevo per Integrazione Pulita */
     #sib-container {
       background-color: transparent !important;
       border: none !important;
@@ -152,6 +151,11 @@
       font-weight: 600 !important;
       margin-bottom: 6px !important;
       display: block !important;
+    }
+
+    /* NASCONDE L'ASTERISCO GENERATO AUTOMATICAMENTE DA BREVO */
+    .entry__label[data-required="*"]::after {
+      content: "" !important;
     }
 
     .input {
@@ -176,15 +180,28 @@
       margin-top: 4px !important;
     }
 
+    /* CORREZIONE DISTANZA CHECKBOX E TESTO */
     .entry__choice {
-      margin-bottom: 8px !important;
+      margin-bottom: 12px !important;
+      display: block !important;
     }
 
     .checkbox__label {
       display: flex !important;
       align-items: center !important;
-      gap: 10px !important;
+      gap: 12px !important;
       cursor: pointer !important;
+    }
+
+    .checkbox__label input[type="checkbox"],
+    .checkbox__label input[type="radio"] {
+      margin-right: 12px !important;
+      width: 18px !important;
+      height: 18px !important;
+      cursor: pointer !important;
+      flex-shrink: 0 !important;
+      position: static !important;
+      opacity: 1 !important;
     }
 
     .sib-form-block__button {
@@ -306,7 +323,7 @@
               <!-- EMAIL -->
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
-                  <label class="entry__label" for="EMAIL" data-required="*">Inserisci la tua e-mail *</label>
+                  <label class="entry__label" for="EMAIL">Inserisci la tua e-mail <span style="color:#ff4949;">*</span></label>
                   <div class="entry__field">
                     <input class="input" type="email" id="EMAIL" name="EMAIL" placeholder="es. mario.rossi@email.it" autocomplete="off" required />
                   </div>
@@ -317,7 +334,7 @@
               <!-- NOME FONDO -->
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
-                  <label class="entry__label" for="NOME_FONDO_PENSIONE" data-required="*">Nome del tuo Fondo Pensione *</label>
+                  <label class="entry__label" for="NOME_FONDO_PENSIONE">Nome del tuo Fondo Pensione <span style="color:#ff4949;">*</span></label>
                   <div class="entry__field">
                     <input class="input" maxlength="200" type="text" id="NOME_FONDO_PENSIONE" name="NOME_FONDO_PENSIONE" placeholder="es. Amundi SecondaPensione, Fonchim, ecc." autocomplete="off" required />
                   </div>
@@ -327,7 +344,7 @@
               <!-- COMPARTO -->
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
-                  <label class="entry__label" for="COMPARTO_FONDO_PENSIONE" data-required="*">Comparto della linea (se conosciuto) *</label>
+                  <label class="entry__label" for="COMPARTO_FONDO_PENSIONE">Comparto della linea (se conosciuto) <span style="color:#ff4949;">*</span></label>
                   <div class="entry__field">
                     <input class="input" maxlength="200" type="text" id="COMPARTO_FONDO_PENSIONE" name="COMPARTO_FONDO_PENSIONE" placeholder="es. Espansione, Azionario, Bilanciato..." autocomplete="off" required />
                   </div>
@@ -337,7 +354,7 @@
               <!-- NUMERO ALBO -->
               <div class="sib-input sib-form-block">
                 <div class="form__entry entry_block">
-                  <label class="entry__label" for="NUMERO_ALBO_FONDO_PENSIONE">Numero Albo Fondo PensIONE (opzionale)</label>
+                  <label class="entry__label" for="NUMERO_ALBO_FONDO_PENSIONE">Numero Albo Fondo Pensione (opzionale)</label>
                   <div class="entry__field">
                     <input class="input" maxlength="200" type="text" id="NUMERO_ALBO_FONDO_PENSIONE" name="NUMERO_ALBO_FONDO_PENSIONE" placeholder="es. 5042" autocomplete="off" />
                   </div>
@@ -348,7 +365,7 @@
               <!-- PATRIMONIO -->
               <div class="sib-checkbox-group sib-form-block" data-required="true" style="margin-top: 10px;">
                 <div class="form__entry entry_mcq">
-                  <label class="entry__label" data-required="*">Patrimonio Personale Indicativo *</label>
+                  <label class="entry__label">Patrimonio Personale Indicativo <span style="color:#ff4949;">*</span></label>
                   <div>
                     <div class="entry__choice">
                       <label class="checkbox__label">
@@ -421,7 +438,7 @@
   <footer>
     <div class="container footer-content">
       <p><strong>Stefano Camossi</strong> - Consulente Finanziario Autonomo</p>
-      <p>Iscritto all'Albo Unico dei Consulenti Finanziari (OCF)</p>
+      <p>Iscritto all'Albo Unico dei Consulenti Finanziari (OCF n. 1823)</p>
       <p><a href="https://magistercoin.it" target="_blank">www.magistercoin.it</a></p>
       <p style="font-size: 0.75rem; opacity: 0.7;">© All rights reserved.</p>
     </div>
