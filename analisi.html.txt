@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisi Gratuita Fondo Pensione | Stefano Camossi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #1E293B;
+      --accent: #cfb53b;
+      --accent-hover: #b89f2e;
+      --text-main: #334155;
+      --text-muted: #64748B;
+      --bg-light: #F8FAFC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 50px 0 30px 0;
+      text-align: center;
+    }
+
+    .badge-scarcity {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #FEF3C7;
+      color: #92400E;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      border: 1px solid #FDE68A;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 30px auto;
+    }
+
+    .grid-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .benefit-card {
+      background: #FFFFFF;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Container Modulo Brevo */
+    .form-section {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      padding: 40px 20px;
+      margin-bottom: 60px;
+    }
+
+    /* Reset/Overriding Stili Brevo per Integrazione Pulita */
+    #sib-container {
+      background-color: transparent !important;
+      border: none !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+
+    .sib-form-block {
+      padding: 8px 0 !important;
+    }
+
+    .entry__label {
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.95rem !important;
+      color: var(--primary) !important;
+      font-weight: 600 !important;
+      margin-bottom: 6px !important;
+      display: block !important;
+    }
+
+    .input {
+      width: 100% !important;
+      padding: 12px 16px !important;
+      border: 1px solid #CBD5E1 !important;
+      border-radius: 8px !important;
+      font-size: 1rem !important;
+      font-family: 'Inter', sans-serif !important;
+      transition: border-color 0.2s !important;
+      box-sizing: border-box !important;
+    }
+
+    .input:focus {
+      border-color: var(--accent) !important;
+      outline: none !important;
+    }
+
+    .entry__specification {
+      font-size: 0.8rem !important;
+      color: var(--text-muted) !important;
+      margin-top: 4px !important;
+    }
+
+    .entry__choice {
+      margin-bottom: 8px !important;
+    }
+
+    .checkbox__label {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      cursor: pointer !important;
+    }
+
+    .sib-form-block__button {
+      width: 100% !important;
+      padding: 16px !important;
+      background-color: var(--accent) !important;
+      color: #FFFFFF !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      border-radius: 8px !important;
+      cursor: pointer !important;
+      transition: background-color 0.2s !important;
+      border: none !important;
+    }
+
+    .sib-form-block__button:hover {
+      background-color: var(--accent-hover) !important;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #94A3B8;
+      padding: 40px 0;
+      font-size: 0.875rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    footer a {
+      color: #F1F5F9;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.85rem;
+      }
+      .form-section {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="https://magistercoin.it" class="logo">Magistercoin <span>| Stefano Camossi</span></a>
+      <span style="color: #94A3B8; font-size: 0.875rem;">Consulente Finanziario Autonomo</span>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- HERO -->
+    <section class="hero">
+      <div class="badge-scarcity">
+        <span>⚠️</span>
+        <span>Disponibilità Limitata: Massimo 5 Analisi Gratuite al Mese</span>
+      </div>
+      <h1>Analisi Gratuita e Indipendente del Tuo Fondo Pensione</h1>
+      <p>Scopri se stai pagando commissioni nascoste e come ottimizzare la tua posizione previdenziale con un'analisi svolta personalmente da un consulente autonomo.</p>
+    </section>
+
+    <!-- BENEFITS GRID -->
+    <section class="grid-benefits">
+      <div class="benefit-card">
+        <h3>🔍 Verifica Costi Nascosti</h3>
+        <p>Ti mostriamo l'impatto reale dell'ISC (Indicatore Sintetico dei Costi) sul tuo capitale finale.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>📊 Efficienza Fiscale</h3>
+        <p>Scopri come sfruttare al massimo la deducibilità fiscale fino a 5.164,57€ all'anno.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>📞 Call Gratuita Dedicata</h3>
+        <p>Possibilità di commentare i risultati dell'analisi in una consulenza individuale di 15 minuti.</p>
+      </div>
+    </section>
+
+    <!-- BREVO FORM SECTION -->
+    <section class="form-section">
+      <div class="sib-form">
+        <div id="sib-form-container" class="sib-form-container">
+          
+          <div id="error-message" class="sib-form-message-panel" style="font-size:15px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px; margin-bottom: 20px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">
+                La tua iscrizione non può essere convalidata. Per favore controlla i campi.
+              </span>
+            </div>
+          </div>
+
+          <div id="success-message" class="sib-form-message-panel" style="font-size:15px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:6px; margin-bottom: 20px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">
+                La tua richiesta è stata inviata correttamente. Riceverai un'email a breve.
+              </span>
+            </div>
+          </div>
+
+          <div id="sib-container">
+            <form id="sib-form" method="POST" action="https://647fb00d.sibforms.com/serve/MUIFACTUt4IpBEihExCJWK7y2O3J_DbxCzXuIcr_N1Vm_e81drJPHDcMrGHMERfJYNx_SLuUi8iJHTtPIM9ObokGJbVTcoxiIgTDY5I5jt3mbr7u95QfmSpI21QUOn2vb0kEB40ru__mJzFxUttO7EE-zAcAHQ5QHs8shZSo_gKvRR9lxj7q2d9GvhdK3WKn-tR9X_HC8NHZ1qkKVg==" data-type="subscription">
+
+              <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 24px; text-align: center;">Modulo di Richiesta Analisi</h2>
+
+              <!-- EMAIL -->
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <label class="entry__label" for="EMAIL" data-required="*">Inserisci la tua e-mail *</label>
+                  <div class="entry__field">
+                    <input class="input" type="email" id="EMAIL" name="EMAIL" placeholder="es. mario.rossi@email.it" autocomplete="off" required />
+                  </div>
+                  <label class="entry__specification">Tutti i dati inviati sono strettamente confidenziali.</label>
+                </div>
+              </div>
+
+              <!-- NOME FONDO -->
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <label class="entry__label" for="NOME_FONDO_PENSIONE" data-required="*">Nome del tuo Fondo Pensione *</label>
+                  <div class="entry__field">
+                    <input class="input" maxlength="200" type="text" id="NOME_FONDO_PENSIONE" name="NOME_FONDO_PENSIONE" placeholder="es. Amundi SecondaPensione, Fonchim, ecc." autocomplete="off" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- COMPARTO -->
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <label class="entry__label" for="COMPARTO_FONDO_PENSIONE" data-required="*">Comparto della linea (se conosciuto) *</label>
+                  <div class="entry__field">
+                    <input class="input" maxlength="200" type="text" id="COMPARTO_FONDO_PENSIONE" name="COMPARTO_FONDO_PENSIONE" placeholder="es. Espansione, Azionario, Bilanciato..." autocomplete="off" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- NUMERO ALBO -->
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <label class="entry__label" for="NUMERO_ALBO_FONDO_PENSIONE">Numero Albo Fondo PensIONE (opzionale)</label>
+                  <div class="entry__field">
+                    <input class="input" maxlength="200" type="text" id="NUMERO_ALBO_FONDO_PENSIONE" name="NUMERO_ALBO_FONDO_PENSIONE" placeholder="es. 5042" autocomplete="off" />
+                  </div>
+                  <label class="entry__specification">Utile per individuare con certezza assoluta il fondo da analizzare.</label>
+                </div>
+              </div>
+
+              <!-- PATRIMONIO -->
+              <div class="sib-checkbox-group sib-form-block" data-required="true" style="margin-top: 10px;">
+                <div class="form__entry entry_mcq">
+                  <label class="entry__label" data-required="*">Patrimonio Personale Indicativo *</label>
+                  <div>
+                    <div class="entry__choice">
+                      <label class="checkbox__label">
+                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="&lt;100.000" data-required="true" />
+                        <span>Meno di 100.000 €</span>
+                      </label>
+                    </div>
+                    <div class="entry__choice">
+                      <label class="checkbox__label">
+                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="100.000-300.000" data-required="true" />
+                        <span>Tra 100.000 € e 300.000 €</span>
+                      </label>
+                    </div>
+                    <div class="entry__choice">
+                      <label class="checkbox__label">
+                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="300.000-1.000.000" data-required="true" />
+                        <span>Tra 300.000 € e 1.000.000 €</span>
+                      </label>
+                    </div>
+                    <div class="entry__choice">
+                      <label class="checkbox__label">
+                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="&gt;1.000.000" data-required="true" />
+                        <span>Oltre 1.000.000 €</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ACCETTAZIONE PRIVACY -->
+              <div class="sib-optin sib-form-block" data-required="true" style="margin-top: 15px;">
+                <div class="form__entry entry_mcq">
+                  <div class="entry__choice">
+                    <label class="checkbox__label">
+                      <input type="checkbox" value="1" id="ACCETTAZIONE_PRIVACY" name="ACCETTAZIONE_PRIVACY" required />
+                      <span style="font-size: 0.85rem; color: var(--text-main);">
+                        Accetto le condizioni generali e di ricevere comunicazioni da Stefano Camossi, Consulente Finanziario Autonomo.
+                      </span>
+                    </label>
+                  </div>
+                  <label class="entry__specification">Puoi cancellare l'iscrizione in qualsiasi momento.</label>
+                </div>
+              </div>
+
+              <!-- BOTTONE INVIO -->
+              <div class="sib-form-block" style="margin-top: 20px;">
+                <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                  RICHIEDI L'ANALISI GRATUITA (MAX 5/MESE)
+                </button>
+              </div>
+
+              <!-- DECLARATION BREVO -->
+              <div class="sib-form__declaration" style="margin-top: 15px; font-size: 0.75rem; color: var(--text-muted);">
+                <p>Acconsento al trattamento dei dati in conformità alla <a href="https://taplink.at/it/profile/18048995/pages/" target="_blank" rel="nofollow">Privacy Policy</a>.</p>
+                <p>Utilizziamo Brevo come piattaforma di gestione. Inviando il modulo accetti i termini di <a href="https://www.brevo.com/it/legal/privacypolicy/" target="_blank" rel="nofollow">Brevo</a>.</p>
+              </div>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+              <input type="hidden" name="locale" value="it">
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <p><strong>Stefano Camossi</strong> - Consulente Finanziario Autonomo</p>
+      <p>Iscritto all'Albo Unico dei Consulenti Finanziari (OCF)</p>
+      <p><a href="https://magistercoin.it" target="_blank">www.magistercoin.it</a></p>
+      <p style="font-size: 0.75rem; opacity: 0.7;">© All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT BREVO -->
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Scegli un prefisso paese';
+    window.LOCALE = 'it';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato e riprova.";
+    window.REQUIRED_ERROR_MESSAGE = "Questo campo è obbligatorio.";
+    window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide.";
+    window.REQUIRED_MULTISELECT_MESSAGE = 'Seleziona almeno 1 opzione';
+    window.translation = {
+      common: {
+        selectedList: '{quantity} lista selezionata',
+        selectedLists: '{quantity} liste selezionate',
+        selectedOption: '{quantity} selezionato',
+        selectedOptions: '{quantity} selezionati',
+      }
+    };
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+</body>
+</html>
