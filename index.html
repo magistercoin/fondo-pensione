@@ -295,144 +295,126 @@
     </section>
 
     <!-- BREVO FORM SECTION -->
-    <section class="form-section">
-      <div class="sib-form">
-        <div id="sib-form-container" class="sib-form-container">
-          
-          <div id="error-message" class="sib-form-message-panel" style="font-size:15px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px; margin-bottom: 20px;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <span class="sib-form-message-panel__inner-text">
-                La tua iscrizione non può essere convalidata. Per favore controlla i campi.
-              </span>
+<section class="form-section">
+  <div class="sib-form">
+    <div id="sib-form-container" class="sib-form-container">
+
+      <div id="sib-container">
+        <form id="sib-form" method="POST" action="https://647fb00d.sibforms.com/serve/MUIFACTUt4IpBEihExCJWK7y2O3J_DbxCzXuIcr_N1Vm_e81drJPHDcMrGHMERfJYNx_SLuUi8iJHTtPIM9ObokGJbVTcoxiIgTDY5I5jt3mbr7u95QfmSpI21QUOn2vb0kEB40ru__mJzFxUttO7EE-zAcAHQ5QHs8shZSo_gKvRR9lxj7q2d9GvhdK3WKn-tR9X_HC8NHZ1qkKVg==">
+
+          <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 24px; text-align: center;">Modulo di Richiesta Analisi</h2>
+
+          <!-- EMAIL -->
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <label class="entry__label" for="EMAIL">Inserisci la tua e-mail <span style="color:#ff4949;">*</span></label>
+              <div class="entry__field">
+                <input class="input" type="email" id="EMAIL" name="EMAIL" placeholder="es. mario.rossi@email.it" required />
+              </div>
+              <label class="entry__specification">Tutti i dati inviati sono strettamente confidenziali.</label>
             </div>
           </div>
 
-          <div id="success-message" class="sib-form-message-panel" style="font-size:15px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:6px; margin-bottom: 20px;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <span class="sib-form-message-panel__inner-text">
-                La tua richiesta è stata inviata correttamente. Riceverai un'email a breve.
-              </span>
+          <!-- NOME FONDO -->
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <label class="entry__label" for="NOME_FONDO_PENSIONE">Nome del tuo Fondo Pensione <span style="color:#ff4949;">*</span></label>
+              <div class="entry__field">
+                <input class="input" maxlength="200" type="text" id="NOME_FONDO_PENSIONE" name="NOME_FONDO_PENSIONE" placeholder="es. Amundi SecondaPensione, Fonchim, ecc." required />
+              </div>
             </div>
           </div>
 
-          <div id="sib-container">
-            <form id="sib-form" method="POST" action="https://647fb00d.sibforms.com/serve/MUIFACTUt4IpBEihExCJWK7y2O3J_DbxCzXuIcr_N1Vm_e81drJPHDcMrGHMERfJYNx_SLuUi8iJHTtPIM9ObokGJbVTcoxiIgTDY5I5jt3mbr7u95QfmSpI21QUOn2vb0kEB40ru__mJzFxUttO7EE-zAcAHQ5QHs8shZSo_gKvRR9lxj7q2d9GvhdK3WKn-tR9X_HC8NHZ1qkKVg==" data-type="subscription">
-
-              <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 24px; text-align: center;">Modulo di Richiesta Analisi</h2>
-
-              <!-- EMAIL -->
-              <div class="sib-input sib-form-block">
-                <div class="form__entry entry_block">
-                  <label class="entry__label" for="EMAIL">Inserisci la tua e-mail <span style="color:#ff4949;">*</span></label>
-                  <div class="entry__field">
-                    <input class="input" type="email" id="EMAIL" name="EMAIL" placeholder="es. mario.rossi@email.it" autocomplete="off" required />
-                  </div>
-                  <label class="entry__specification">Tutti i dati inviati sono strettamente confidenziali.</label>
-                </div>
+          <!-- COMPARTO -->
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <label class="entry__label" for="COMPARTO_FONDO_PENSIONE">Comparto della linea (se conosciuto) <span style="color:#ff4949;">*</span></label>
+              <div class="entry__field">
+                <input class="input" maxlength="200" type="text" id="COMPARTO_FONDO_PENSIONE" name="COMPARTO_FONDO_PENSIONE" placeholder="es. Espansione, Azionario, Bilanciato..." required />
               </div>
-
-              <!-- NOME FONDO -->
-              <div class="sib-input sib-form-block">
-                <div class="form__entry entry_block">
-                  <label class="entry__label" for="NOME_FONDO_PENSIONE">Nome del tuo Fondo Pensione <span style="color:#ff4949;">*</span></label>
-                  <div class="entry__field">
-                    <input class="input" maxlength="200" type="text" id="NOME_FONDO_PENSIONE" name="NOME_FONDO_PENSIONE" placeholder="es. Amundi SecondaPensione, Fonchim, ecc." autocomplete="off" required />
-                  </div>
-                </div>
-              </div>
-
-              <!-- COMPARTO -->
-              <div class="sib-input sib-form-block">
-                <div class="form__entry entry_block">
-                  <label class="entry__label" for="COMPARTO_FONDO_PENSIONE">Comparto della linea (se conosciuto) <span style="color:#ff4949;">*</span></label>
-                  <div class="entry__field">
-                    <input class="input" maxlength="200" type="text" id="COMPARTO_FONDO_PENSIONE" name="COMPARTO_FONDO_PENSIONE" placeholder="es. Espansione, Azionario, Bilanciato..." autocomplete="off" required />
-                  </div>
-                </div>
-              </div>
-
-              <!-- NUMERO ALBO -->
-              <div class="sib-input sib-form-block">
-                <div class="form__entry entry_block">
-                  <label class="entry__label" for="NUMERO_ALBO_FONDO_PENSIONE">Numero Albo Fondo Pensione (opzionale)</label>
-                  <div class="entry__field">
-                    <input class="input" maxlength="200" type="text" id="NUMERO_ALBO_FONDO_PENSIONE" name="NUMERO_ALBO_FONDO_PENSIONE" placeholder="es. 5042" autocomplete="off" />
-                  </div>
-                  <label class="entry__specification">Utile per individuare con certezza assoluta il fondo da analizzare.</label>
-                </div>
-              </div>
-
-              <!-- PATRIMONIO -->
-              <div class="sib-checkbox-group sib-form-block" data-required="true" style="margin-top: 10px;">
-                <div class="form__entry entry_mcq">
-                  <label class="entry__label">Patrimonio Personale Indicativo <span style="color:#ff4949;">*</span></label>
-                  <div>
-                    <div class="entry__choice">
-                      <label class="checkbox__label">
-                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="&lt;100.000" data-required="true" />
-                        <span>Meno di 100.000 €</span>
-                      </label>
-                    </div>
-                    <div class="entry__choice">
-                      <label class="checkbox__label">
-                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="100.000-300.000" data-required="true" />
-                        <span>Tra 100.000 € e 300.000 €</span>
-                      </label>
-                    </div>
-                    <div class="entry__choice">
-                      <label class="checkbox__label">
-                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="300.000-1.000.000" data-required="true" />
-                        <span>Tra 300.000 € e 1.000.000 €</span>
-                      </label>
-                    </div>
-                    <div class="entry__choice">
-                      <label class="checkbox__label">
-                        <input type="checkbox" name="PATRIMONIO_FINANZIARIO[]" value="&gt;1.000.000" data-required="true" />
-                        <span>Oltre 1.000.000 €</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- ACCETTAZIONE PRIVACY -->
-              <div class="sib-optin sib-form-block" data-required="true" style="margin-top: 15px;">
-                <div class="form__entry entry_mcq">
-                  <div class="entry__choice">
-                    <label class="checkbox__label">
-                      <input type="checkbox" value="1" id="ACCETTAZIONE_PRIVACY" name="ACCETTAZIONE_PRIVACY" required />
-                      <span style="font-size: 0.85rem; color: var(--text-main);">
-                        Accetto le condizioni generali e di ricevere comunicazioni da Stefano Camossi, Consulente Finanziario Autonomo.
-                      </span>
-                    </label>
-                  </div>
-                  <label class="entry__specification">Puoi cancellare l'iscrizione in qualsiasi momento.</label>
-                </div>
-              </div>
-
-              <!-- BOTTONE INVIO -->
-              <div class="sib-form-block" style="margin-top: 20px;">
-                <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
-                  RICHIEDI L'ANALISI GRATUITA (MAX 5/MESE)
-                </button>
-              </div>
-
-              <!-- DECLARATION BREVO -->
-              <div class="sib-form__declaration" style="margin-top: 15px; font-size: 0.75rem; color: var(--text-muted);">
-                <p>Acconsento al trattamento dei dati in conformità alla <a href="https://taplink.at/it/profile/18048995/pages/" target="_blank" rel="nofollow">Privacy Policy</a>.</p>
-                <p>Utilizziamo Brevo come piattaforma di gestione. Inviando il modulo accetti i termini di <a href="https://www.brevo.com/it/legal/privacypolicy/" target="_blank" rel="nofollow">Brevo</a>.</p>
-              </div>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
-              <input type="hidden" name="locale" value="it">
-
-            </form>
+            </div>
           </div>
-        </div>
+
+          <!-- NUMERO ALBO -->
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <label class="entry__label" for="NUMERO_ALBO_FONDO_PENSIONE">Numero Albo Fondo Pensione (opzionale)</label>
+              <div class="entry__field">
+                <input class="input" maxlength="200" type="text" id="NUMERO_ALBO_FONDO_PENSIONE" name="NUMERO_ALBO_FONDO_PENSIONE" placeholder="es. 5042" />
+              </div>
+              <label class="entry__specification">Utile per individuare con certezza assoluta il fondo da analizzare.</label>
+            </div>
+          </div>
+
+          <!-- PATRIMONIO (Pulsanti Radio per evitare errori di scelta multipla) -->
+          <div class="sib-checkbox-group sib-form-block" style="margin-top: 10px;">
+            <div class="form__entry entry_mcq">
+              <label class="entry__label">Patrimonio Personale Indicativo <span style="color:#ff4949;">*</span></label>
+              <div>
+                <div class="entry__choice">
+                  <label class="checkbox__label">
+                    <input type="radio" name="PATRIMONIO_FINANZIARIO" value="&lt;100.000" required />
+                    <span>Meno di 100.000 €</span>
+                  </label>
+                </div>
+                <div class="entry__choice">
+                  <label class="checkbox__label">
+                    <input type="radio" name="PATRIMONIO_FINANZIARIO" value="100.000-300.000" required />
+                    <span>Tra 100.000 € e 300.000 €</span>
+                  </label>
+                </div>
+                <div class="entry__choice">
+                  <label class="checkbox__label">
+                    <input type="radio" name="PATRIMONIO_FINANZIARIO" value="300.000-1.000.000" required />
+                    <span>Tra 300.000 € e 1.000.000 €</span>
+                  </label>
+                </div>
+                <div class="entry__choice">
+                  <label class="checkbox__label">
+                    <input type="radio" name="PATRIMONIO_FINANZIARIO" value="&gt;1.000.000" required />
+                    <span>Oltre 1.000.000 €</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACCETTAZIONE PRIVACY -->
+          <div class="sib-optin sib-form-block" style="margin-top: 15px;">
+            <div class="form__entry entry_mcq">
+              <div class="entry__choice">
+                <label class="checkbox__label">
+                  <input type="checkbox" value="1" id="ACCETTAZIONE_PRIVACY" name="ACCETTAZIONE_PRIVACY" required />
+                  <span style="font-size: 0.85rem; color: var(--text-main);">
+                    Accetto le condizioni generali e di ricevere comunicazioni da Stefano Camossi, Consulente Finanziario Autonomo.
+                  </span>
+                </label>
+              </div>
+              <label class="entry__specification">Puoi cancellare l'iscrizione in qualsiasi momento.</label>
+            </div>
+          </div>
+
+          <!-- BOTTONE INVIO -->
+          <div class="sib-form-block" style="margin-top: 20px;">
+            <button class="sib-form-block__button" type="submit">
+              RICHIEDI L'ANALISI GRATUITA (MAX 5/MESE)
+            </button>
+          </div>
+
+          <!-- DECLARATION BREVO -->
+          <div class="sib-form__declaration" style="margin-top: 15px; font-size: 0.75rem; color: var(--text-muted);">
+            <p>Acconsento al trattamento dei dati in conformità alla <a href="https://taplink.at/it/profile/18048995/pages/" target="_blank" rel="nofollow">Privacy Policy</a>.</p>
+            <p>Utilizziamo Brevo come piattaforma di gestione. Inviando il modulo accetti i termini di <a href="https://www.brevo.com/it/legal/privacypolicy/" target="_blank" rel="nofollow">Brevo</a>.</p>
+          </div>
+
+          <input type="text" name="email_address_check" value="" style="display:none;">
+          <input type="hidden" name="locale" value="it">
+
+        </form>
       </div>
-    </section>
-
+    </div>
   </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
